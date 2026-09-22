@@ -1,0 +1,8 @@
+Unzip this folder, open a terminal in the project root, then run:
+
+  npm install
+  npm run dev
+
+Open http://localhost:5173
+
+Do not run only "npm run dev" first. Dependencies are not in the zip, so install is required once.
