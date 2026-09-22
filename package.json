@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "description": "Pixel-perfect Airbnb listing clone with React, Express, and MongoDB",
+  "type": "module",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
-    "postinstall": "npm install --prefix server && npm install --prefix client",
-    "install:all": "npm install --prefix server && npm install --prefix client",
+    "postinstall": "npm install --prefix server && npm install --prefix client --include=dev",
+    "install:all": "npm install --prefix server && npm install --prefix client --include=dev",
     "dev": "concurrently -n server,client -c magenta,cyan \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
     "dev:server": "npm run dev --prefix server",
     "dev:client": "npm run dev --prefix client",

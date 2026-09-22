@@ -9,7 +9,15 @@ export function isMemoryMode() {
   return memoryMode;
 }
 
+let connecting = null;
+
 export async function connectStore() {
+  if (connecting) return connecting;
+  connecting = connectStoreOnce();
+  return connecting;
+}
+
+async function connectStoreOnce() {
   const uri = process.env.MONGO_URI;
   if (!uri) {
     memoryMode = true;
